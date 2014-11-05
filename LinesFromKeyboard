@@ -1,0 +1,35 @@
+/* Sa se scrie un program pentru citirea de linii de la tastatura si scrierea lor intr-un fisier avand ca nume primul 
+cuvant introdus de la tastatura, folosind metoda readLine() pentru un obiect de tip DataInputStream sau 
+BufferedReader.
+*/
+
+import java.io.*;
+
+public class LinesFromKeyboard 
+{
+
+	public static void main (String[] args) throws IOException
+	{
+		BufferedReader f = new BufferedReader( new InputStreamReader(System.in));
+		char aux;
+		String name = "";
+		aux = (char) f.read();
+		name += aux;
+		while  (aux != ' ')
+		{
+			aux = '\u0000';
+			aux += (char) f.read();
+			if (aux != ' ')
+				name += aux;
+		} 
+		name += ".txt";
+		FileWriter g = new FileWriter(name);	
+		for (int i = 0; i < 5; i++)
+		{
+			g.write(f.readLine());
+			g.write("\n");
+		}
+		f.close();
+		g.close();
+	}
+}
