@@ -1,0 +1,20 @@
+/*Sa se scrie un program care folosind clasa Scanner care citeste o serie de intregi de la tastatura afisand pe ecran 
+suma acestora.
+*/
+
+import java.io.*;
+
+
+public class ScannerFromK 
+{
+	public static void main(String[] args) throws IOException 
+	{
+        Scanner f = new Scanner(System.in);
+        int suma = 0;
+        while (f.hasNextInt())
+             suma += f.nextInt();
+                 System.out.println(suma);
+         f.close();
+ 
+    }
+}
